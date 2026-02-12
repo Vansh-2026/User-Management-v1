@@ -19,6 +19,7 @@ import com.in28minutes.rest.webservices.restful_webservices.service.userimpl.Use
 @CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
+
 public class UserController {
 
 	@Autowired
@@ -31,14 +32,14 @@ public class UserController {
 		return UserModels;
 	}
 
-	@GetMapping("/{userId}")
+	@GetMapping("/user/{userId}")
 	public Optional<UserModel> getUserById(@PathVariable Long userId) {
 		Optional<UserModel> user = userService.getUserById(userId);
 		System.out.println("userId : " + userId + " : user : " + user);
 		return user;
 	}
 
-	@DeleteMapping("/{userId}")
+	@DeleteMapping("/user/{userId}")
 	public String deleteUseryId(@PathVariable Long userId) {
 		userService.deleteUserById(userId);
 		return "user deleted successfully.";

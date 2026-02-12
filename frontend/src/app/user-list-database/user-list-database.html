@@ -14,7 +14,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.city }}</td>
         <td>
-            <button type="button" (click)="deleteUser()" class="btn btn-danger">Delete</button>
+            <button type="button" (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
             <button type="button" (click)="updateUser(user.id)" class="btn btn-warning">Update</button>
         </td>
     </tr>

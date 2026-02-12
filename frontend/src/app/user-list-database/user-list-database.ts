@@ -42,8 +42,13 @@ export class UserListDatabase implements OnInit {
     console.log("Update Button Clicked ...")
     this.router.navigate(['/userAdd',id]);
   }
-  deleteUser() {
-   console.log("user deleted ...");
-   
+  deleteUser(id:number) {
+ 
+     this.userService.deleteUser(id).subscribe((data) => {
+      alert('User deleted');
+      console.log("user deleted ...",data)
+      this.router.navigate(['/user-list-database']);
+    });
+
   }
 }

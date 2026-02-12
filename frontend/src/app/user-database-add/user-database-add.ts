@@ -26,10 +26,11 @@ export class UserDatabaseAdd implements OnInit {
 
     this.userService.getUserById(this.id).subscribe(resp => {
       this.user.id=this.id;
-      this.user.pid=resp.pid;
-      this.user.name=resp.name;
-      this.user.email=resp.email;
-      this.user.city=resp.city;
+      // this.user.pid=resp.pid;
+      // this.user.name=resp.name;
+      // this.user.email=resp.email;
+      // this.user.city=resp.city;
+      this.user = resp;
       this.ref.detectChanges();
       // this.pid = user.pid;
       // this.name = user.name;
@@ -52,16 +53,7 @@ export class UserDatabaseAdd implements OnInit {
   }
   // updateUser 
   updateUser() {
-
-    const user: User = {
-      id:this.id,
-      pid: this.pid,
-      name: this.name,
-      email: this.email,
-      city: this.city
-    };
-
-    this.userService.updateUser(this.id, user).subscribe(() => {
+  this.userService.updateUser(this.id, this.user).subscribe(() => {
       alert('User updated');
       this.router.navigate(['/users']);
     });

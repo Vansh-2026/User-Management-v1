@@ -1,0 +1,24 @@
+<h2>Update & Add User</h2>
+<br><br><br>
+<div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter Valid Values </div>
+<form  #todoForm="ngForm" (ngSubmit)="!todoForm.invalid && saveTodo()" ngNativeValidate>
+    <fieldset class="form-group">
+        <label>Pid : </label>
+        <input type="text" class="form-control" name="pid" required [(ngModel)]="user.pid"  />
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Name : </label>
+        <input type="text" class="form-control" name="name" required [(ngModel)]="user.name"  />
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Email : </label>
+        <input type="email" class="form-control" name="email" required [(ngModel)]="user.email"  />
+    </fieldset>
+    <fieldset class="form-group">
+        <label>City : </label>
+        <input type="text" class="form-control"  name="city" required [(ngModel)]="user.city" />
+    </fieldset><br>
+    <button type="submit"  class="btn btn-success">Add / Update User</button><br>
+</form>
+
+	

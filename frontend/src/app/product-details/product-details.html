@@ -1,0 +1,23 @@
+<h1 class="title">User's Details</h1>
+
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (users of productList; track users.id) {
+      <tr>
+        <td>{{ users.Id }}</td>
+        <td>{{ users.Name }}</td>
+        <td>{{ users.City }}</td>
+        <td>{{ users.Email }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

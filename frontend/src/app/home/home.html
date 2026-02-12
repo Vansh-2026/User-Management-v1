@@ -1,0 +1,13 @@
+<section class="home-container">
+    <h1>Welcome to Our Application</h1>
+    <p>Build amazing web applications with Angular</p>
+    <div class="container">
+        <h6>Click Here To Get Customized Welcome Message</h6>
+        <button (click)="getWelcomeMessageWithParameter()" class="btn btn-success">Click Here</button><br /><br />
+    </div>
+    <div class="container" *ngIf="welcomeMessageFromService">
+        <H2>Your Customized Welcome Message</H2>
+        {{welcomeMessageFromService}}
+    </div>
+
+</section>

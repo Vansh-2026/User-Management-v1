@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <section class="container">
+          <header>Registration Form</header>
+
+          <form #studentForm="ngForm" class="form" (ngSubmit)="addUser(studentForm.value)">
+            <div class="input-box">
+              <label>Id:</label>
+              <input type="text" placeholder="Enter Id e.g S01" name="Pid" required [ngModel]="selectedStudent?.Pid" />
+            </div>
+
+            <div class="input-box">
+              <label>Name:</label>
+              <input type="text" placeholder="Enter name" name="Name" required [ngModel]="selectedStudent?.Name" />
+            </div>
+
+            <div class="input-box">
+              <label>Email Address:</label>
+              <input type="email" placeholder="Enter email address" name="Email" [ngModel]="selectedStudent?.Email" />
+            </div>
+
+            <div class="input-box">
+              <label>City:</label>
+              <input type="text" placeholder="Enter your city" name="City" [ngModel]="selectedStudent?.City" />
+            </div>
+            @if (!selectedStudent) {
+            <button type="submit" class="btn-submit">Submit</button>
+            }@else {
+            <button class="btn-submit">Update</button>
+            }
+
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="title">Student Details</h2>
+
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Srno.</th>
+              <th>Pid</th>
+              <th>Name</th>
+              <th>City</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (stud of student; track stud.Pid; let i= $index) {
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ stud.Pid }}</td>
+              <td>{{ stud.Name }}</td>
+              <td>{{ stud.City }}</td>
+              <td>{{ stud.Email }}</td>
+              <td>
+                <button type="button" (click)="deleteStudent(stud.id)">Delete</button>
+                <button type="button" (click)="updateStudent(stud.id)">Update</button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

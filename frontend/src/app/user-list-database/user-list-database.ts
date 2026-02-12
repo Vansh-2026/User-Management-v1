@@ -1,0 +1,40 @@
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { UserBackendTs } from '../service/data/user-backend.js';
+import { User } from '../TableSchema.js';
+import { log } from 'console';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
+@Component({
+  selector: 'app-user-list-database',
+  imports: [CommonModule],
+  templateUrl: './user-list-database.html',
+  styleUrl: './user-list-database.css',
+})
+export class UserListDatabase implements OnInit {
+
+
+  users: User[] = [];
+  constructor(private userService: UserBackendTs, private cdr: ChangeDetectorRef, private route: ActivatedRoute) {
+
+  }
+  ngOnInit(): void {
+    this.loadUsers();
+
+  }
+  loadUsers() {
+    this.userService.getUsers().subscribe((data) => {
+      console.log(data);
+
+      this.users = data;
+      this.cdr.detectChanges();
+    });
+  }
+  router = inject(Router);
+  addUser() {
+    console.log("addUser Clicked ... ")
+    this.router.navigate(['/userAdd']);
+
+  }
+}

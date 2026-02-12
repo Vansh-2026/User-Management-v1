@@ -1,0 +1,33 @@
+
+<h1>User</h1>
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Pid</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--  user:user -->
+              <tr *ngFor="let user of User">
+                <td>{{user.pid}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteUser(user.id)" >Delete</button>
+                  <button type="button" (click)="updateUser(user.id)" class="btn btn-warning" >Update</button>
+                </td>
+              </tr>
+      <!-- } -->
+    </tbody>
+
+  </table>
+  <button (click)="addUser()"  class="btn btn-success" style="width: 100%;">Add</button>
+
+

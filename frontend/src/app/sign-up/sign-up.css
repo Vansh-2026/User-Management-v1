@@ -1,0 +1,103 @@
+CSS For Reactive Form 
+
+Page background 
+body {
+  background-color: #f5f6fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.row {
+  margin-top: 20px;
+  display: auto;
+  width: auto;
+  height: auto;
+  
+
+}
+
+
+.card {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.card-header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+
+.card-body {
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+
+.col-form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+
+.form-control {
+  height: 42px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+ 
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+
+input[type="date"].form-control {
+  padding-right: 10px;
+}
+
+input[type="radio"].form-control {
+  padding-right: 10px;
+  inline-size: 10 px;
+}
+.btn-submit {
+ 
+  padding: 10px 30px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+
+
+::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+
+@media (max-width: 768px) {
+  .col-form-label {
+    margin-bottom: 6px;
+  }
+}

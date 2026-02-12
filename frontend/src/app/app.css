@@ -1,0 +1,6 @@
+main {
+  margin-top: 80px;   /* height of header */
+  margin-bottom: 50px; /* height of footer */
+  padding: 1rem;
+  min-height: calc(100vh - 130px);
+}

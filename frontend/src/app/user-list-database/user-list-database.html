@@ -1,0 +1,23 @@
+<table class="user-table">
+    <tr>
+        <th>Pid</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Actions</th>
+    </tr>
+
+    @for (user of users; track user.id) {
+    <tr>
+        <td>{{ user.pid }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.city }}</td>
+        <td>
+            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-warning">Update</button>
+        </td>
+    </tr>
+    }
+</table>
+ <button  (click)="addUser()" class="btn btn-success" style="width: 100%;">Add</button>

@@ -1,0 +1,27 @@
+<div class="page-container">
+    <div class="login-container">
+
+        <h2>Login</h2>
+
+        <form #loginForm="ngForm" method="post" (ngSubmit)="handleBasicAuthLogin()" ngNativeValidate>
+
+            <!-- Username -->
+            <div class="input-group">
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" required />
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" required />
+            </div>
+
+            <!-- Button -->
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+    </div>
+</div>

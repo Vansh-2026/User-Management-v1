@@ -34,6 +34,7 @@ export const routes: Routes = [
   { path: "list-user", component: ListUser },
   { path: "user-list-database", component:UserListDatabase },
   { path: "user/:id", component: User },
+  { path: "userAdd/:id", component: UserDatabaseAdd },
   { path: "userAdd", component: UserDatabaseAdd },
   { path: "", component: Home, pathMatch: "full" }
 ];

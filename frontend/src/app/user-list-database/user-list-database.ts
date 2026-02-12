@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserListDatabase implements OnInit {
 
 
+
   users: User[] = [];
   constructor(private userService: UserBackendTs, private cdr: ChangeDetectorRef, private route: ActivatedRoute) {
 
@@ -36,5 +37,13 @@ export class UserListDatabase implements OnInit {
     console.log("addUser Clicked ... ")
     this.router.navigate(['/userAdd']);
 
+  }
+  updateUser(id:number) {
+    console.log("Update Button Clicked ...")
+    this.router.navigate(['/userAdd',id]);
+  }
+  deleteUser() {
+   console.log("user deleted ...");
+   
   }
 }

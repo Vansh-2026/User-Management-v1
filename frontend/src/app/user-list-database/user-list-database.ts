@@ -48,6 +48,7 @@ export class UserListDatabase implements OnInit {
       alert('User deleted');
       console.log("user deleted ...",data)
       this.router.navigate(['/user-list-database']);
+      this.cdr.detectChanges();
     });
 
   }

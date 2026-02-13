@@ -1,4 +1,90 @@
-<table class="user-table">
+<kendo-grid [data]="users" [height]="400">
+
+    <kendo-grid-column field="pid" title="Pid" [width]="400">
+    </kendo-grid-column>
+
+    <kendo-grid-column field="name" title="Name" [width]="400">
+    </kendo-grid-column>
+
+    <kendo-grid-column field="email" title="Email" [width]="400">
+    </kendo-grid-column>
+
+    <kendo-grid-column field="city" title="City" [width]="400">
+    </kendo-grid-column>
+
+    <kendo-grid-column title="Actions" [width]="240">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <button type="button" (click)="deleteUser(dataItem.id)" class="btn btn-danger btn-sm me-2">
+                Delete
+            </button>
+
+            <button class="btn btn-warning btn-sm me-2" (click)="openEditModal(dataItem)" data-bs-toggle="modal"
+                data-bs-target="#editUserModal">
+                Edit
+            </button>
+
+        </ng-template>
+    </kendo-grid-column>
+
+</kendo-grid>
+<button class="btn btn-success mb-3" style="width: 100%;" (click)="addUser()">
+    Add
+</button>
+
+<!-- Update Model -->
+<div class="modal fade" id="editUserModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title">Update User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+
+
+            <div class="modal-body" *ngIf="selectedUser">
+                <div class="mb-3">
+                    <label class="form-label">Id:</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="selectedUser.id" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Pid:</label>
+                    <input type="text" class="form-control" name="pid" [(ngModel)]="selectedUser.pid">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="selectedUser.name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input type="text" class="form-control" name="email" [(ngModel)]="selectedUser.email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City:</label>
+                    <input type="email" class="form-control" name="city" [(ngModel)]="selectedUser.city">
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button type="button" class="btn btn-warning" (click)="updateUser()" data-bs-dismiss="modal">
+                    Update
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- <table class="user-table">
     <tr>
         <th>Pid</th>
         <th>Name</th>
@@ -20,4 +106,4 @@
     </tr>
     }
 </table>
- <button  (click)="addUser()" class="btn btn-success" style="width: 100%;">Add</button>
+ <button  (click)="addUser()" class="btn btn-success" style="width: 100%;">Add</button> -->

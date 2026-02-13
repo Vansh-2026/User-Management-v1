@@ -51,12 +51,4 @@ export class UserDatabaseAdd implements OnInit {
       }
     });
   }
-  // updateUser 
-  updateUser() {
-  this.userService.updateUser(this.id, this.user).subscribe(() => {
-      alert('User updated');
-      this.router.navigate(['/users']);
-    });
-
-  }
 }

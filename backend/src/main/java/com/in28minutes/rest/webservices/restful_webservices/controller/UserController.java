@@ -45,7 +45,7 @@ public class UserController {
 		return "user deleted successfully.";
 	}
 
-	@PutMapping("/{userId}")
+	@PutMapping("/user/{userId}")
 	public String updateUser(@RequestBody UserModel user, @PathVariable Long userId) {
 		userService.updateUser(user, userId);
 		return "user updated successfully.";

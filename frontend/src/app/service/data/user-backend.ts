@@ -23,8 +23,8 @@ export class UserBackendTs {
   addUser(user: User) {
     return this.http.post<User>(this.apiUrl, user)
   }
-  updateUser(id: number, user: User) {
-    return this.http.put(`${this.apiUrl}/${id}`, user);
+  updateUser(user: User, id: number) {
+    return this.http.put(`http://localhost:8080/user/${id}`, user);
   }
 
   deleteUser(id: number) {

@@ -22,7 +22,6 @@ export class UserListDatabase implements OnInit {
   }
   ngOnInit(): void {
     this.loadUsers();
-
   }
   loadUsers() {
     this.userService.getUsers().subscribe((data) => {
